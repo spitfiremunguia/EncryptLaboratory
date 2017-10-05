@@ -38,6 +38,19 @@ namespace EncryptLab
             return key;
             
         }
+        public static string permutate(int[,]matrix,string input)
+        {
+            string output = string.Empty;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    int position = matrix[i, j];
+                    output += input[position - 1];
+                }
+            }
+            return output;
+        }
         
     }
 }

@@ -14,9 +14,9 @@ namespace EncryptLab
 
         private static string Kplus56(string hexData)
         {
-            string kPlus = string.Empty;
+
             string key = Utilities.getBinaryKey(hexData);
-             int[,] PC_1 = new int[,]{
+            int[,] PC_1 = new int[,]{
             {57,49,41,33,25,17,9},
             {1,58,50,42,34,26,18},
             {10,2,59,51,43,35,27},
@@ -25,15 +25,8 @@ namespace EncryptLab
             {7,62,54,46,38,30,22},
             {14,6,61,53,45,37,29},
             {21,13,5,28,20,12,4}};
-            for(int i=0;i<PC_1.GetLength(0);i++)
-            {
-                for(int j=0;j<PC_1.GetLength(1);j++)
-                {
-                    int position = PC_1[i, j];
-                    kPlus += key[position];
-                }
-            }
-            return kPlus;
+            return Utilities.permutate(PC_1, key);
+           
 
 
         }
@@ -74,15 +67,8 @@ namespace EncryptLab
             foreach(string cds in cd)
             {
                 string k = string.Empty;
-                for (int i = 0; i < PC_2.GetLength(0); i++)
-                {
-                    for (int j = 0; j < PC_2.GetLength(1); j++)
-                    {
-                        int position = PC_2[i, j];
-                         k += cds[position-1];
-                    }
-                }
-                ks.Add(k);
+
+                ks.Add(Utilities.permutate(PC_2, cds));
             }
             return ks;
         }
