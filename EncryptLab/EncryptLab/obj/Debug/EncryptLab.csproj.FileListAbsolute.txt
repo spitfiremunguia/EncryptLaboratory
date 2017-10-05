@@ -5,3 +5,10 @@ C:\Users\david\source\repos\EncryptLab\EncryptLab\obj\Debug\EncryptLab.csprojRes
 C:\Users\david\source\repos\EncryptLab\EncryptLab\obj\Debug\EncryptLab.csproj.CoreCompileInputs.cache
 C:\Users\david\source\repos\EncryptLab\EncryptLab\obj\Debug\EncryptLab.exe
 C:\Users\david\source\repos\EncryptLab\EncryptLab\obj\Debug\EncryptLab.pdb
+C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\bin\Debug\EncryptLab.exe.config
+C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\bin\Debug\EncryptLab.exe
+C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\bin\Debug\EncryptLab.pdb
+C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.csprojResolveAssemblyReference.cache
+C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.csproj.CoreCompileInputs.cache
+C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.exe
+C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.pdb
