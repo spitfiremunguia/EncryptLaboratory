@@ -10,8 +10,7 @@ namespace EncryptLab
     {
         static void Main(string[] args)
         {
-            
-           var a= KeyGenerator.GenerateKeys("133457799BBCDFF1");
+            var a = Encrypt.EncodeData("0000000100100011010001010110011110001001101010111100110111101111");
         }
     }
 }
