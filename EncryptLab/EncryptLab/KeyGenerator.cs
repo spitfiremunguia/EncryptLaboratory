@@ -23,8 +23,6 @@ namespace EncryptLab
             {21,13,5,28,20,12,4}};
             return Utilities.permutate(PC_1, key);
            
-
-
         }
 
         private static List<string> CDgenerator(string key)
@@ -37,11 +35,28 @@ namespace EncryptLab
             List<string> outPut = new List<string>();
             for(int i=0;i<16;i++)
             {
-                string c = cCurrent.Substring(1, cCurrent.Length - 1) + cCurrent.Substring(0, 1);
-                string d= dCurrent.Substring(1, dCurrent.Length - 1) + dCurrent.Substring(0, 1);
-                outPut.Add(c + d);
-                cCurrent = c;
-                dCurrent = d;
+                string c = string.Empty;
+                string d = string.Empty;
+                if(i==0||i==1||i==8||i==15)//just once
+                {
+                    c = cCurrent.Substring(1, cCurrent.Length - 1) + cCurrent.Substring(0, 1);
+                    d = dCurrent.Substring(1, dCurrent.Length - 1) + dCurrent.Substring(0, 1);
+                    outPut.Add(c + d);
+                    cCurrent = c;
+                    dCurrent = d;
+                }
+                else //two times
+                {
+                    for(int j=0;j<2;j++)
+                    {
+                        c = cCurrent.Substring(1, cCurrent.Length - 1) + cCurrent.Substring(0, 1);
+                        d = dCurrent.Substring(1, dCurrent.Length - 1) + dCurrent.Substring(0, 1);
+                        cCurrent = c;
+                        dCurrent = d;
+                    }
+                    outPut.Add(c + d);
+                }
+                
             }
             return outPut;
         }
