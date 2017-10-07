@@ -124,7 +124,7 @@ namespace EncryptLab
             return xor;
         }
 
-        public static string EncodeData(string M)
+        public static string EncodeData(string M,bool o)
         {
             int[,] InerseIP_Matrix = new int[,]{
             {16,7,20,21},
@@ -134,8 +134,12 @@ namespace EncryptLab
             {2,8,24,14},
             {19,13,30,6},
             {22,11,4,25}};
-
+            
             List<string> GeneratedKeys = KeyGenerator.GenerateKeys(key);
+            if(o==false)
+            {
+                GeneratedKeys.Reverse();
+            }
 
             List<string> L = new List<string>();
             List<string> R = new List<string>();
@@ -156,6 +160,10 @@ namespace EncryptLab
                 output.Append(L[i]);
             }
             return Utilities.permutate(InerseIP_Matrix, output.ToString());
-        }          
+        } 
+        public static string Decrypt(string m)
+        {
+            return EncodeData(m, false);
+        }
     }
 }

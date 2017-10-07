@@ -10,7 +10,10 @@ namespace EncryptLab
     {
         static void Main(string[] args)
         {
-            var a = Encrypt.EncodeData("0000000100100011010001010110011110001001101010111100110111101111");
+            var a = Encrypt.EncodeData("0000000100100011010001010110011110001001101010111100110111101111",true);
+            string m = a.PadLeft(64, '0');
+            var b = Encrypt.Decrypt(m);
+            
         }
     }
 }
