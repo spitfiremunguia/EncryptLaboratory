@@ -30,15 +30,15 @@ namespace EncryptLab
         {
             var bitKey = ConvertHexToBitArray(hexData);
             string key = string.Empty;
-            for(int i=0;i<bitKey.Count;i++)
+            for (int i = 0; i < bitKey.Count; i++)
             {
                 key += bitKey[i] ? "1" : "0";
-                    
+
             }
             return key;
-            
+
         }
-        public static string permutate(int[,]matrix,string input)
+        public static string permutate(int[,] matrix, string input)
         {
             string output = string.Empty;
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -50,6 +50,36 @@ namespace EncryptLab
                 }
             }
             return output;
+        }
+        public static bool GetBool(char c)
+        {
+            return c == '1';
+        }
+        public static BitArray Reverse(BitArray array)
+        {
+            int length = array.Length;
+            int mid = (length / 2);
+            for (int i = 0; i < mid; i++)
+            {
+                bool bit = array[i];
+                array[i] = array[length - i - 1];
+                array[length - i - 1] = bit;
+            }
+            return array;
+        }
+        public static byte ConvertToByte(String s)
+        {
+            List<bool> BooleanValues = new List<bool>();
+            for (int i = 0; i < s.Length; i++)
+            {
+                BooleanValues.Add(GetBool(s[i]));
+            }
+            BitArray array = new BitArray(BooleanValues.ToArray());
+
+            array = Reverse(array);
+            byte[] bytes = new byte[1];
+            array.CopyTo(bytes, 0);
+            return bytes[0];
         }
         
     }
