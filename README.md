@@ -8,9 +8,13 @@ Para cifrar un archivo se sigue la siguiente sintaxis
 EcnryptLaboratory -c -f[Path]
 ```
 Donde ```-c``` indica que se desea cifrar, ```-f``` indica que está por indicarse el archivo y ```[Path]``` es la ruta absoluta del archivo que se desea cifrar.
+###### Nota
+El archivo cifrado, se escribirá en el mismo directorio del archivo original.
 ### Descifrado de un archivo 
 Para descifrar un archivo se sigue la siguiente sintaxis
 ```
 EcnryptLaboratory -d -f[Path]
 ```
 Donde ```-c``` indica que se desea descifrar, ```-f``` indica que está por indicarse el archivo y ```[Path]``` es la ruta absoluta del archivo que se desea descifrar.
+###### Nota
+El archivo descifrado, se escribirá en el mismo directorio del archivo cifrado.
