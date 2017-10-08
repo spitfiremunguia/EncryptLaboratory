@@ -5,18 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Collections;
-
+using System.Diagnostics;
 namespace EncryptLab
 {
     public class EncryptManager
     {
         public static bool Encriptar(string path)
         {
+            Stopwatch sw = new Stopwatch();
+
             if (!File.Exists(path))
             {
                 Console.WriteLine("File was not found.");
                 return false;
             }
+            Console.WriteLine($"File: {Path.GetFileName(path)}");
             string allText = File.ReadAllText(path);
             byte[] allBytes = Encoding.Default.GetBytes(path);
             var hexadecimalFile = BitConverter.ToString(allBytes);//returns the file in hexadecimal
@@ -45,6 +48,8 @@ namespace EncryptLab
         /// <returns></returns>
         public static bool Decipher(string inputPath)
         {
+
+            Stopwatch sw = new Stopwatch();
             StringBuilder s = new StringBuilder();
 
             // Verifies if file extension is the correct.
@@ -53,6 +58,8 @@ namespace EncryptLab
                 Console.WriteLine("File doesn't have correct format.");
                 return false;
             }
+            Console.WriteLine($"File: {Path.GetFileName(inputPath)}");
+
             // Verifies is file exists
             if (!File.Exists(inputPath))
             {
@@ -82,9 +89,14 @@ namespace EncryptLab
                 FileBytes[i] = AllFileBytes[i];
             }
 
+            // Reading File
+            sw.Restart();
+            Console.SetCursorPosition(0, 1);
+            Console.WriteLine("Reading file...");
             for (int i = 0; i < FileBytes.Length; i++)
             {
                 s.Append(Convert.ToString(FileBytes[i], 2).PadLeft(8, '0'));
+                //Utilities.WriteRemainingTime(i, FileBytes.Length, sw.Elapsed.TotalSeconds);
             }
             while (s.Length % 64 != 0)
                 s.Append("0");
@@ -92,9 +104,13 @@ namespace EncryptLab
             StringBuilder EncodedMessage = new StringBuilder();
             string output = s.ToString();
             // Encodes each group of 64 bits in the file.
+            Console.SetCursorPosition(0, 1);
+            Console.WriteLine("Deciphering...");
+            sw.Restart();
             for (int i = 0; i < s.Length / 64; i++)
             {
                 EncodedMessage.Append(Encrypt.Decrypt(output.Substring(64 * i, 64)));
+                //Utilities.WriteRemainingTime(i, s.Length/64, sw.Elapsed.TotalSeconds);
             }
 
             List<byte> OutputBytes = new List<byte>();
@@ -115,6 +131,7 @@ namespace EncryptLab
         /// <returns></returns>
         public static bool Cipher(string inputPath)
         {
+            Stopwatch sw = new Stopwatch();
             StringBuilder strBits = new StringBuilder();
             // Verifies if file exists.
             if (!File.Exists(inputPath))
@@ -122,13 +139,19 @@ namespace EncryptLab
                 Console.WriteLine("File was not found.");
                 return false;
             }
+            Console.WriteLine($"File: {Path.GetFileName(inputPath)}");
+
             string FileExtension = Path.GetExtension(inputPath).Substring(1);
             int FileExtensionLength = FileExtension.Length;
             byte[] FileBytes = File.ReadAllBytes(inputPath);
             // Builds a string with file data in binary.
+            Console.SetCursorPosition(0, 1);
+            Console.WriteLine("Reading file...");
+            sw.Restart();
             for (int i = 0; i < FileBytes.Length; i++)
             {
                 strBits.Append(Convert.ToString(FileBytes[i], 2).PadLeft(8, '0'));
+                //Utilities.WriteRemainingTime(i, FileBytes.Length, sw.Elapsed.TotalSeconds);
             }
             // Makes sure the data is multiple of 64 (Unncessary for files)
             while (strBits.Length % 64 != 0)
@@ -137,8 +160,12 @@ namespace EncryptLab
             StringBuilder EncodedMessage = new StringBuilder();
             string output = strBits.ToString();
             // Encrypts each group of 64 bits.
+            Console.SetCursorPosition(0,1);
+            sw.Restart();
+            Console.WriteLine("Ciphering file");
             for (int i = 0; i < strBits.Length / 64; i++)
             {
+                //Utilities.WriteRemainingTime(i, strBits.Length / 64, sw.Elapsed.TotalSeconds);
                 EncodedMessage.Append(Encrypt.Encryption(output.Substring(64 * i, 64)));
             }
 

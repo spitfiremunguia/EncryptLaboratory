@@ -81,6 +81,13 @@ namespace EncryptLab
             array.CopyTo(bytes, 0);
             return bytes[0];
         }
-        
+        public static void WriteRemainingTime(int current, int total, double CurrentTime)
+        {
+            double AverageVeolcity = (double)current / CurrentTime;
+            double remainingTime = ((double) total - (double)current) / AverageVeolcity;
+            Console.SetCursorPosition(0, 2);
+            Console.WriteLine(($"Remaining Time: {Math.Round(remainingTime,2)} s").PadRight(30, ' '));
+        }
+
     }
 }
