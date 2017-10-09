@@ -12,10 +12,12 @@ C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\obj\De
 C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.csproj.CoreCompileInputs.cache
 C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.exe
 C:\Users\david\Documents\GitRepos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.pdb
-C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\bin\Debug\EncryptLab.exe.config
-C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\bin\Debug\EncryptLab.exe
-C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\bin\Debug\EncryptLab.pdb
 C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.csprojResolveAssemblyReference.cache
 C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.csproj.CoreCompileInputs.cache
-C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.exe
-C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.pdb
+C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\bin\Debug\Cipher.exe.config
+C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\bin\Debug\Cipher.exe
+C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\bin\Debug\Cipher.pdb
+C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.Properties.Resources.resources
+C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\EncryptLab.csproj.GenerateResource.Cache
+C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\Cipher.exe
+C:\Users\Maynor\source\repos\EncryptLaboratory\EncryptLab\EncryptLab\obj\Debug\Cipher.pdb
