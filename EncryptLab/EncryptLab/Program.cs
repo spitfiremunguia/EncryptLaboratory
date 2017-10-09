@@ -13,7 +13,6 @@ namespace EncryptLab
             if(args.Length != 2)
             {
                 Console.WriteLine("No es un comando válido. Utilize -h para ayuda.");
-                Console.ReadKey();
                 if(args[0]!="-h")
                     return;
             }
