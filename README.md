@@ -18,3 +18,5 @@ Cipher.exe -d -f[Path]
 Donde ```-c``` indica que se desea descifrar, ```-f``` indica que está por indicarse el archivo y ```[Path]``` es la ruta absoluta del archivo que se desea descifrar.
 ###### Nota
 El archivo descifrado, se escribirá en el mismo directorio del archivo cifrado.
+##### Nota
+Se recomienda ejecutar el programa con permisos de administrador.
